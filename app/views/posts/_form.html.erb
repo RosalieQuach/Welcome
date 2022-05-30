@@ -1,0 +1,6 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.collection_radio_buttons :is_offer, [[true, 'I would like to offer'], [false, 'I am searching for']], :first, :last %>
+  <%= f.submit 'Create a new post' %>
+<% end %>
