@@ -1,4 +1,5 @@
 <%= simple_form_for(@post) do |f| %>
+  <%= f.association :category, as: :radio_buttons %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.collection_radio_buttons :is_offer, [[true, 'I would like to offer'], [false, 'I am searching for']], :first, :last %>
