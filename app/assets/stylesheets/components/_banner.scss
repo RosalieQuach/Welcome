@@ -1,0 +1,27 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-hug.jpg");
+  background-size: contain;
+
+  .banner-content {
+    padding: 75px;
+  }
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  p {
+    color: white;
+    opacity: 0.8;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .btn {
+    padding: 15px 40px;
+  }
+}
