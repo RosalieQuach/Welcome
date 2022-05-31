@@ -1,5 +1,10 @@
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="post-card">
+    <ul>
+      <% @posts.each do |post| %>
+        <h1><li><%= link_to post.title, post_path(post) %></li></h1>
+        <p><li><%= post.description %></li></p>
+      <% end %>
+    </ul>
+  </div>
+</div>
