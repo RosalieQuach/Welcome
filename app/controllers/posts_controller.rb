@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -14,8 +14,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-    redirect_to post_path(@post)
+    @post.user = current_user
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +38,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :is_offer)
+    params.require(:post).permit(:title, :description, :is_offer, :category_id)
   end
 
   def set_post
