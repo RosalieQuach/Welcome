@@ -3,6 +3,17 @@
   background: white;
 }
 
+.navbar-home {
+background: transparent;
+box-shadow: none;
+position: absolute;
+width: 100%;
+.nav-item .nav-link {
+  color: white;
+  font-weight: bold;
+}
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

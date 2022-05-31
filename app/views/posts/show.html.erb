@@ -1,8 +1,10 @@
-<h2><%= @post.title %></h2>
-<p><%= @post.description %></p>
-<p><%= @post.is_offer %></p>
+<div class= "container">
+  <h2><%= @post.title %></h2>
+  <p><%= @post.description %></p>
+  <p><%= @post.is_offer %></p>
 
-<%= link_to "Delete #{@post.title}",
-            post_path(@post),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <%= link_to "Delete",
+              post_path(@post),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary" %>
+</div>

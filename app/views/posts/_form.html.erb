@@ -1,7 +1,14 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.association :category, as: :radio_buttons %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.collection_radio_buttons :is_offer, [[true, 'I would like to offer'], [false, 'I am searching for']], :first, :last %>
-  <%= f.submit 'Create a new post' %>
-<% end %>
+<div class=container>
+  <div class="post-form">
+      <%= simple_form_for(@post) do |f| %>
+        <%= f.association :category, as: :radio_buttons %>
+        <%= f.collection_radio_buttons :is_offer, [[true, 'I would like to offer'], [false, 'I am searching for']], :first, :last %>
+        <%= f.input :title, input_html: { class: "title" } %>
+        <%= f.input :description, input_html: { class: "description" } %>
+
+          <div class="post-button">
+            <%= f.submit 'Create a new post', class: "btn btn-lg btn-primary" %>
+          </div>
+      <% end %>
+    </div>
+</div>
