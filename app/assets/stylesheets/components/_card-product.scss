@@ -10,13 +10,14 @@
   overflow: hidden;
   line-height: 1.5em;
   height: 3em;
-  height: 240px;
+  height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 10px;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .card-product img {
@@ -55,4 +56,10 @@
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+.post-description {
+  line-height: 1.5em;
+  height: 2.5em;
+  overflow: hidden;
 }
