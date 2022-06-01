@@ -1,7 +1,15 @@
+<i class="fa fa-gratipay" aria-hidden="true"></i>
+
+
 <div class= "container">
+  <p><% if @post.is_offer? %></p>
+       <p><%= "I would like to offer"%>
+      <% else %>
+        <p><%= "I am searching for"%>
+      <% end %>
   <h2><%= @post.title %></h2>
   <p><%= @post.description %></p>
-  <p><%= @post.is_offer %></p>
+
 
   <%= link_to "Delete",
               post_path(@post),

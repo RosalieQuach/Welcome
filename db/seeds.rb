@@ -6,4 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{ name: 'Language' }, { name: 'Network' }, { name: 'Culture' }])
+20.times do
+  User.create({ email: Faker::Internet.email,
+    encrypted_password: '123456',
+    })
+end
+
+20.times do
+  Post.create!({title: Faker::Lorem.sentence(word_count: 10),
+    category: Category.all.sample,
+    description: Faker::Lorem.sentence(word_count: 25),
+    user_id: Faker::IDNumber.valid,
+    is_offer: Faker::Boolean.boolean(true_ratio: 0.2),
+    created_at: Faker::Date.backward(days: 14),
+    user: User.all.sample})
+end
