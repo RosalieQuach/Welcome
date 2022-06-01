@@ -2,14 +2,16 @@
 <div class="cards">
   <% @posts.each do |post| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <i class="fa fa-home"></i>
         <div class="card-product-infos">
           <h2><%= post.title %></h2>
+          <div class= "post-description">
+            <p><%= post.description %></p>
 
 
-          <p><%= post.description %></p>
+          </div>
           <p><%= link_to "more", post_path(post) %></p>
-          <p><%= current_user.email %></p>
+          <p><%= User.find(post.user_id).email %></p>
           <p>Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
 
         </div>

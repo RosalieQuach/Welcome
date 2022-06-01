@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: sticky;
 }
 
 .navbar-home {
@@ -20,4 +21,8 @@ width: 100%;
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.fa {
+  color: $purple;
 }
