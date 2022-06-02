@@ -1,6 +1,6 @@
 
-
 <div class= "container">
+  <p>Category: <%= @post.category.name %></p>
   <p><% if @post.is_offer? %></p>
        <p><%= "I would like to offer"%>
       <% else %>
@@ -8,7 +8,7 @@
       <% end %>
   <h2><%= @post.title %></h2>
   <p><%= @post.description %></p>
-
+  <p>Contact details: <%= @post.user.email %></p>
 
   <%= link_to "Delete",
               post_path(@post),

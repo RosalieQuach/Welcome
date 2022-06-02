@@ -3,6 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @markers = @posts.map do | post |
+      {
+        lat: post.user.latitude,
+        lng: post.user.longitude
+      }
+    end
   end
 
   def show
