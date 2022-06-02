@@ -35,7 +35,7 @@ end
 20.times do
   Post.create!({title: Faker::Lorem.sentence(word_count: 10),
     category: Category.all.sample,
-    description: Faker::Lorem.sentence(word_count: 25),
+    description: Faker::Lorem.sentence(word_count: 100),
     user_id: Faker::IDNumber.valid,
     is_offer: Faker::Boolean.boolean(true_ratio: 0.2),
     created_at: Faker::Date.backward(days: 14),
