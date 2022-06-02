@@ -1,17 +1,17 @@
 
-<div class= "container">
-  <p>Category: <%= @post.category.name %></p>
-  <p><% if @post.is_offer? %></p>
-       <p><%= "I would like to offer"%>
-      <% else %>
-        <p><%= "I am searching for"%>
-      <% end %>
-  <h2><%= @post.title %></h2>
-  <p><%= @post.description %></p>
-  <p>Contact details: <%= @post.user.email %></p>
+  <div class= "container">
+    <p>Category: <%= @post.category.name %></p>
+    <p><% if @post.is_offer? %></p>
+        <p><%= "I would like to offer"%>
+        <% else %>
+          <p><%= "I am searching for"%>
+        <% end %>
+    <h2><%= @post.title %></h2>
+    <p><%= @post.description %></p>
+    <p>Contact details: <%= @post.user.email %></p>
 
-  <%= link_to "Delete",
-              post_path(@post),
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary" %>
-</div>
+    <%= link_to "Delete",
+                post_path(@post),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary" %>
+  </div>
