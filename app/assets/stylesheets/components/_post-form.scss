@@ -3,16 +3,24 @@
   display: flex;
   justify-content: space-around;
   align-items: center ;
+  padding: 20px;
+
+
   .post-button {
     align-items: center;
     margin-top: 30px;
   }
   .title{
-    width: 600px;
+    width: 700px;
   }
 
   .description {
     height: 300px;
-    width: 600px;
+    width: 700px;
+  }
+
+  .choice {
+    display: flex;
+    justify-content: space-around;
   }
 }

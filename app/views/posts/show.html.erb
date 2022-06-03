@@ -1,16 +1,23 @@
-
 <div class= "container">
-  <p><% if @post.is_offer? %></p>
-       <p><%= "I would like to offer"%>
-      <% else %>
-        <p><%= "I am searching for"%>
-      <% end %>
-  <h2><%= @post.title %></h2>
-  <p><%= @post.description %></p>
+  <div class= "description-container">
+    <div class="title">
+        <% if @post.is_offer? %>
+        <em><%= "I would like to offer"%></em>
+        <% else %>
+        <em><%= "I am searching for"%></em>
+        <% end %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+    </div>
+    
+    <div class="description">
+      <h2><i class="fa <%= @post.category.icon %>"></i> <%= @post.title %></h2>
+    </div>
 
-
-  <%= link_to "Delete",
-              post_path(@post),
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary" %>
+      <div class= "details">
+        <i class="fa fa-map-marker"></i><p><%= User.find(@post.user_id).location %></p>
+        <i class="fa fa-address-card"></i><p><%= @post.user.email %></p>
+        <i class="fa fa-calendar"></i><p><%= distance_of_time_in_words(Time.now, @post.created_at, only: [:days])%> ago</p>
+      </div>
+        <p><%= @post.description %></p>
+  </div>
 </div>

@@ -3,6 +3,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @markers = @posts.map do | post |
+      {
+        lat: post.user.latitude,
+        lng: post.user.longitude
+      }
+    end
+      if params[:query].present?
+        @posts = Post.search_by_location(params[:query])
+      else
+      @posts = Post.all
+      end
   end
 
   def show
