@@ -1,5 +1,4 @@
-<div class="main-container">
-
+<div class= "container">
   <div class= "description-container">
     <div class="title">
         <% if @post.is_offer? %>
@@ -9,6 +8,7 @@
         <% end %>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
     </div>
+    
     <div class="description">
       <h2><i class="fa <%= @post.category.icon %>"></i> <%= @post.title %></h2>
     </div>
@@ -19,5 +19,5 @@
         <i class="fa fa-calendar"></i><p><%= distance_of_time_in_words(Time.now, @post.created_at, only: [:days])%> ago</p>
       </div>
         <p><%= @post.description %></p>
-      </div>
+  </div>
 </div>
