@@ -9,6 +9,11 @@ class PostsController < ApplicationController
         lng: post.user.longitude
       }
     end
+      if params[:query].present?
+        @posts = Post.search_by_location(params[:query])
+      else
+      @posts = Post.all
+      end
   end
 
   def show
