@@ -10,9 +10,9 @@ class PostsController < ApplicationController
       }
     end
       if params[:query].present?
-        @posts = Post.search_by_location(params[:query])
+        @posts = Post.where(user_id: User.near("Bern").map(&:id))
       else
-      @posts = Post.all
+        @posts = Post.all
       end
   end
 
