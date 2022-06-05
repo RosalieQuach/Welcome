@@ -39,5 +39,6 @@ end
     user_id: Faker::IDNumber.valid,
     is_offer: Faker::Boolean.boolean(true_ratio: 0.2),
     created_at: Faker::Date.backward(days: 14),
+    location: ['Zurich', 'Geneva', 'Bern', 'Lausanne', 'Bellinzona'].sample,
     user: User.all.sample})
 end
