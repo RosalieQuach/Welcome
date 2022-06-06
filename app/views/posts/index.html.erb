@@ -1,6 +1,18 @@
 
-<div class="container" style= "width: 450px">
-<%= form_tag posts_path, method: :get do %>
+<div class= "container filter">
+    <%= link_to posts_path(category_id: "1") do %>
+      <i class="fas fa-language fa-2x" id="icon"></i>
+    <% end %>
+      <%= link_to posts_path(category_id: "2") do %>
+      <i class="fas fa-comments fa-2x" id="icon"></i>
+    <% end %>
+      <%= link_to posts_path(category_id: "3") do %>
+      <i class="fas fa-futbol fa-2x" id="icon"></i>
+    <% end %>
+  </div>
+
+<div class= "container filter">
+  <%= form_tag posts_path, method: :get do %>
 
   <%= text_field_tag :query,
     params[:query],
@@ -8,6 +20,7 @@
     placeholder: "Location"
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
+
 <% end %>
 </div>
 

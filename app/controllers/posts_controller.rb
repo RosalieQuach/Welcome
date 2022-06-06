@@ -3,17 +3,18 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @markers = @posts.geocoded.map do |post|
-      {
-          lat: post.latitude,
-          lng: post.longitude
-      }
-    end
     if params[:query].present?
       @posts = Post.where(location: params[:query])
     else
       @posts = Post.all
     end
+    #if params[:category].present?
+     # @posts = Post.where(category_id: Category.where(params[:query]))
+    #else
+     # @posts = Post.all
+    #end
+
+    @posts = @posts.filter_by_category(params[:category_id]) if params[:category_id].present?
   end
 
   def show
