@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       }
     end
     if params[:query].present?
-      @posts = Post.where(user_id: User.near(params[:query]).map(&:id))
+      @posts = Post.where(location: params[:query])
     else
       @posts = Post.all
     end
