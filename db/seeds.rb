@@ -26,7 +26,6 @@ Category.create({
   User.create({
     email: Faker::Internet.email,
     password: '123456',
-    nickname: Faker::Games::Pokemon.name,
     created_at: Faker::Date.backward(days: 14),
     updated_at: Faker::Date.backward(days: 7),
     location: ['Zurich', 'Geneva', 'Bern', 'Lausanne', 'Bellinzona'].sample
