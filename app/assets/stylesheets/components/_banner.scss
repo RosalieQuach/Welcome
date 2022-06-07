@@ -2,8 +2,8 @@
   height: 100vh;
   display: flex;
   justify-content: space-around;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-hug.jpg");
-  background-size: contain;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("hug_fullsize.jpg");
+  background-size: cover;
 
   .banner-content {
     padding: 75px;
