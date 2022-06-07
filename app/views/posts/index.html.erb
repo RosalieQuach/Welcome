@@ -1,17 +1,28 @@
-
-<div class= "container filter">
+<h1 style="text-align:center">Welcome Posts</h1>
+<div class= "container_filter">
     <%= link_to posts_path(category_id: "1") do %>
       <i class="fas fa-language fa-2x" id="icon"></i>
+      <p style="text-align:center">Language</p>
     <% end %>
       <%= link_to posts_path(category_id: "2") do %>
       <i class="fas fa-comments fa-2x" id="icon"></i>
+      <p style="text-align:center">Network</p>
     <% end %>
-      <%= link_to posts_path(category_id: "3") do %>
+    <%= link_to posts_path(category_id: "3") do %>
       <i class="fas fa-futbol fa-2x" id="icon"></i>
+      <p style="text-align:center">Sports</p>
+    <% end %>
+    <%= link_to posts_path(category_id: "4") do %>
+      <i class="fas fa-briefcase fa-2x" id="icon"></i>
+      <p style="text-align:center">Job</p>
+    <% end %>
+    <%= link_to posts_path(category_id: "5") do %>
+      <i class="fas fa-child fa-2x" id="icon"></i>
+      <p style="text-align:center">Family</p>
     <% end %>
   </div>
 
-<div class= "container filter">
+<div class= "container_filter">
   <%= form_tag posts_path, method: :get do %>
 
   <%= text_field_tag :query,

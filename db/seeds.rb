@@ -22,6 +22,16 @@ Category.create({
   icon: 'fa-futbol'
   })
 
+Category.create({
+  name: 'Job',
+  icon: 'fa-briefcase'
+  })
+
+Category.create({
+  name: 'Family',
+  icon: 'fa-child'
+  })
+
 20.times do
   User.create({
     email: Faker::Internet.email,

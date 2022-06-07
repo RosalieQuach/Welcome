@@ -1,6 +1,6 @@
 <div class= "description-container">
 
-<div class= "col-6">
+  <div class= "col-6">
 
     <div class="title">
         <% if @post.is_offer? %>
@@ -15,19 +15,20 @@
       <h2><i class="fa <%= @post.category.icon %>"></i> <%= @post.title %></h2>
     </div>
 
-      <div class= "details">
-        <i class="fa fa-map-marker"></i><p><%= @post.location %></p>
-        <i class="fa fa-address-card"></i><p><%= @post.user.email %></p>
-        <i class="fa fa-calendar"></i><p><%= distance_of_time_in_words(Time.now, @post.created_at, only: [:days])%> ago</p>
-      </div>
+    <div class= "details">
+      <i class="fa fa-map-marker"></i><p><%= @post.location %></p>
+      <i class="fa fa-address-card"></i><p><%= @post.user.email %></p>
+      <i class="fa fa-calendar"></i><p><%= distance_of_time_in_words(Time.now, @post.created_at, only: [:days])%> ago</p>
+    </div>
+
         <p><%= @post.description %></p>
   </div>
 
+
 <div class= "col-6">
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @marker.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-</div>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @marker.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

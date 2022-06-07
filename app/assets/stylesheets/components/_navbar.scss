@@ -23,6 +23,10 @@ width: 100%;
   width: 40px;
 }
 
+#navbarDropdown{
+  z-index: 1;
+}
+
 .fa {
   color: $purple;
   text-decoration: none;
