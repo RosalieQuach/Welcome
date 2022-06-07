@@ -23,18 +23,20 @@
     <% end %>
   </div>
 
-<div class= "search_location">
-  <%= form_tag posts_path, method: :get do %>
 
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Location"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-
-<% end %>
-</div>
+<div class="container">
+  <%= simple_form_for :query, url: posts_path, method: :get do |f| %>
+    <div class="search-form-control form-group my-3 mx-2">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control string required",
+      placeholder: "Location"
+    %>
+      <button name="button" type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
 
   <div class="cards">
       <% @posts.each do |post| %>
@@ -51,3 +53,4 @@
         </div>
       <% end %>
     </div>
+</div>
