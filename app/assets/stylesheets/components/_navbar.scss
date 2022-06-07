@@ -3,31 +3,29 @@
   background: white;
   position: sticky;
 }
-
 .navbar-home {
 background: transparent;
 box-shadow: none;
 position: absolute;
 width: 100%;
-.nav-item .nav-link {
-  color: white;
-  font-weight: bold;
+  .nav-item .nav-link {
+    color: white;
+    font-weight: bold;
+  }
 }
-}
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
+#navbarDropdown{
+  z-index: 1;
+}
 .fa {
   color: $purple;
   text-decoration: none;
 }
-
 a {
   text-decoration: none;
 }

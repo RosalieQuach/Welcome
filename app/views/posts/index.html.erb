@@ -1,28 +1,42 @@
+<h1 style="text-align:center">Welcome Posts</h1>
 
-<div class= "container filter">
+<div class= "icon_filters">
     <%= link_to posts_path(category_id: "1") do %>
       <i class="fas fa-language fa-2x" id="icon"></i>
+      <p style="text-align:center">Language</p>
     <% end %>
       <%= link_to posts_path(category_id: "2") do %>
       <i class="fas fa-comments fa-2x" id="icon"></i>
+      <p style="text-align:center">Network</p>
     <% end %>
-      <%= link_to posts_path(category_id: "3") do %>
+    <%= link_to posts_path(category_id: "3") do %>
       <i class="fas fa-futbol fa-2x" id="icon"></i>
+      <p style="text-align:center">Sports</p>
+    <% end %>
+    <%= link_to posts_path(category_id: "4") do %>
+      <i class="fas fa-briefcase fa-2x" id="icon"></i>
+      <p style="text-align:center">Job</p>
+    <% end %>
+    <%= link_to posts_path(category_id: "5") do %>
+      <i class="fas fa-child fa-2x" id="icon"></i>
+      <p style="text-align:center">Family</p>
     <% end %>
   </div>
 
-<div class= "container filter">
-  <%= form_tag posts_path, method: :get do %>
 
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Location"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-
-<% end %>
-</div>
+<div class="container">
+  <%= simple_form_for :query, url: posts_path, method: :get do |f| %>
+    <div class="search-form-control form-group my-3 mx-2">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control string required",
+      placeholder: "Location"
+    %>
+      <button name="button" type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
 
   <div class="cards">
       <% @posts.each do |post| %>
@@ -34,10 +48,9 @@
                 <p><%= post.description %></p>
               </div>
               <p><%= link_to "more", post_path(post) %></p>
-              <p>Location: <%= post.location %></p>
-              <p><%= User.find(post.user_id).email %></p>
               <p>Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
             </div>
         </div>
       <% end %>
     </div>
+</div>
