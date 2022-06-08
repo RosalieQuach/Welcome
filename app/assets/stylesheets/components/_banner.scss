@@ -1,9 +1,4 @@
-.banner {
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("hug_fullsize.jpg");
-  background-size: cover;
+
 
   .banner-content {
     padding: 75px;
@@ -24,5 +19,60 @@
 
   .btn {
     padding: 15px 40px;
+  }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-hug.jpg");
+    background-size: cover;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-hug.jpg");
+    background-size: cover;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-hug.jpg");
+    background-size: cover;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("hug_fullsize.jpg");
+    background-size: cover;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("hug_fullsize.jpg");
+    background-size: cover;
   }
 }
