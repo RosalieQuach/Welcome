@@ -1,5 +1,5 @@
-<div class=container>
-  <div class="post-form">
+ <div class="form">
+  <div class="col-12 col-md-8 col-lg-8 align-middle">
       <%= simple_form_for(@post) do |f| %>
 
           <%= f.association :category, as: :radio_buttons %>
@@ -7,11 +7,10 @@
         <div class="choice">
           <%= f.collection_radio_buttons :is_offer, [[true, 'I would like to offer'], [false, 'I am searching for']], :first, :last %>
         </div>
-        <%= f.input :title, input_html: { class: "title" } %>
-        <%= f.input :description, input_html: { class: "description" } %>
-
+          <%= f.input :title, input_html: { class: "title" } %>
+          <%= f.input :description, input_html: { class: "description" } %>
           <div class="post-button">
-            <%= f.submit 'Create a new post', class: "btn btn-lg btn-primary" %>
+            <%= f.submit 'Create a new post', class: "btn btn-md btn-primary mx-auto d-block" %>
           </div>
       <% end %>
     </div>
