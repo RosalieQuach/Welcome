@@ -19,13 +19,14 @@ width: 100%;
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-#navbarDropdown{
-  z-index: 1;
-}
 .fa {
   color: $purple;
   text-decoration: none;
 }
 a {
   text-decoration: none;
+}
+a.nav-link {
+  display: flex;
+  justify-content: end;
 }
