@@ -1,25 +1,19 @@
-.post-form {
-  color: $gray;
-  display: flex;
-  justify-content: space-around;
-  align-items: center ;
-  padding: 20px;
-
-  .post-button {
-    align-items: center;
-    margin-top: 30px;
+  .form {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
   }
+
   .title{
-    width: 700px;
+    border-radius: 5px;
   }
 
   .description {
-    height: 300px;
-    width: 700px;
+    height: 200px;
+    border-radius: 5px;
   }
 
   .choice {
     display: flex;
     justify-content: space-around;
   }
-}
