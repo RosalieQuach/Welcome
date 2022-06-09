@@ -27,8 +27,9 @@ justify-content: center;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: center;
-  align-items: baseline;
+  justify-content: flex-start;
+  align-items: center;
+
   margin: 4px;
   border-radius: 10px;
   padding: 8px;

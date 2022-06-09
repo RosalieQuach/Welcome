@@ -41,6 +41,7 @@
   <% end %>
 
   <div class="cards">
+    <% @posts = Post.order('created_at DESC')%>
       <% @posts.each do |post| %>
         <div class="card-product">
           <i class="fa <%= post.category.icon %>"></i>
@@ -55,6 +56,5 @@
             </div>
         </div>
       <% end %>
-      <% @posts = Post.order('created_at DESC')%>
     </div>
 </div>
