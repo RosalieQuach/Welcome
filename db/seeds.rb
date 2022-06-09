@@ -8,6 +8,11 @@
 require "json"
 require "open-uri"
 
+puts ("Cleaning up DB")
+Post.destroy_all
+User.destroy_all
+Category.destroy_all
+puts ("DB clean")
 
 Category.create({
   name: 'Language',
@@ -36,17 +41,21 @@ Category.create({
 
 
 20.times do
-  # call the API to get user data
-  url = "https://randomuser.me/api/?nat=ch&inc=location,email"
+#   # call the API to get user data
+  url = "https://randomuser.me/api/?nat=ch&inc=location,email,phone"
   user_serialized = URI.open(url).read
   user = JSON.parse(user_serialized)
   # actually create a user with this data
   User.create({
+    phone: user["results"][0]["phone"],
     email: user["results"][0]["email"],
     password: '123456',
     created_at: Faker::Date.backward(days: 14),
     updated_at: Faker::Date.backward(days: 7),
-    location: ['Zurich', 'Geneva', 'Bern', 'Lausanne', 'Bellinzona'].sample
+    location: user["results"][0]["location"]["city"],
+    postcode: user["results"][0]["location"]["postcode"],
+    streetname: user["results"][0]["location"]["street"]["name"],
+    streetnumber: user["results"][0]["location"]["street"]["number"]
     })
 end
 

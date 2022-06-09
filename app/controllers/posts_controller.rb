@@ -19,8 +19,8 @@ class PostsController < ApplicationController
 
   def show
     @marker = [
-      lat: @post.latitude,
-      lng: @post.longitude
+      lat: @post.user.latitude,
+      lng: @post.user.longitude
     ]
   end
 

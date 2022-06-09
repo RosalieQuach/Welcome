@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  def style_address
+    "#{streetname} #{streetnumber}, #{postcode} #{location}"
+  end
 end
