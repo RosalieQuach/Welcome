@@ -20,7 +20,7 @@ justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.card-product {
+.card-product{
   overflow: hidden;
   line-height: 1.5em;
   height: 180px;
@@ -28,11 +28,13 @@ justify-content: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-
+  align-items: baseline;
   margin: 4px;
   border-radius: 10px;
   padding: 8px;
+}
+a {
+  font-weight: bold;
 }
 .card-product h2 {
   font-size: 16px;
