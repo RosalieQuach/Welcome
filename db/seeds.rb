@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "json"
+require "open-uri"
 
 
 Category.create({
@@ -32,14 +34,20 @@ Category.create({
   icon: 'fa-child'
   })
 
+
 20.times do
+  # call the API to get user data
+  url = "https://randomuser.me/api/?nat=ch&inc=location,email"
+  user_serialized = URI.open(url).read
+  user = JSON.parse(user_serialized)
+  # actually create a user with this data
   User.create({
-    email: Faker::Internet.email,
+    email: user["results"][0]["email"],
     password: '123456',
     created_at: Faker::Date.backward(days: 14),
     updated_at: Faker::Date.backward(days: 7),
     location: ['Zurich', 'Geneva', 'Bern', 'Lausanne', 'Bellinzona'].sample
-              })
+    })
 end
 
 20.times do
