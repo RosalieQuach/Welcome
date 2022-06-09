@@ -11,7 +11,6 @@ require "open-uri"
 puts ("Cleaning up DB")
 Post.destroy_all
 User.destroy_all
-Category.destroy_all
 puts ("DB clean")
 
 Category.create({
@@ -40,7 +39,7 @@ Category.create({
   })
 
 
-20.times do
+50.times do
 #   # call the API to get user data
   url = "https://randomuser.me/api/?nat=ch&inc=location,email,phone,picture"
   user_serialized = URI.open(url).read
@@ -60,11 +59,10 @@ Category.create({
     })
 end
 
-20.times do
+50.times do
   Post.create!({title: Faker::Lorem.sentence(word_count: 10),
-    category: Category.all.sample,
+    category: Category.limit(5).sample,
     description: Faker::Lorem.sentence(word_count: 100),
-    user_id: Faker::IDNumber.valid,
     is_offer: Faker::Boolean.boolean(true_ratio: 0.2),
     created_at: Faker::Date.backward(days: 14),
     location: ['Zurich', 'Geneva', 'Bern', 'Lausanne', 'Bellinzona'].sample,

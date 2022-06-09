@@ -2,18 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
     if params[:query].present?
-      @posts = Post.joins(:users).where("user.location = params[:query]")
+      @posts = Post.joins(:user).where(user: { location: params[:query] })
     else
-      @posts = Post.all
+      @posts = Post.all.reorder(created_at: :desc)
     end
-    #if params[:category].present?
-     # @posts = Post.where(category_id: Category.where(params[:query]))
-    #else
-     # @posts = Post.all
-    #end
-
     @posts = @posts.filter_by_category(params[:category_id]) if params[:category_id].present?
   end
 

@@ -41,12 +41,11 @@
   <% end %>
 
   <div class="cards">
-    <% @posts = Post.order('created_at DESC')%>
-      <% @posts.each do |post| %>
+      <% @posts.desc.each do |post| %>
         <div class="card-product">
           <i class="fa <%= post.category.icon %>"></i>
             <div class="card-product-infos">
-              <h2><%= post.title %></h2>
+              <h3><%= post.title %></h3>
               <div class= "post-description">
                 <p><%= post.description %></p>
               </div>
