@@ -41,19 +41,17 @@
   <% end %>
 
   <div class="cards">
-      <% @posts.each do |post| %>
+      <% @posts.desc.each do |post| %>
         <div class="card-product">
           <i class="fa <%= post.category.icon %>"></i>
             <div class="card-product-infos">
-              <h2><%= post.title %></h2>
+              <h3><%= post.title %></h3>
               <div class= "post-description">
                 <p><%= post.description %></p>
               </div>
-              <p><%= post.location %></p>
-
-                <p><%= link_to "more", post_path(post) %></p>
-
-              <p>Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
+                  <p><%= link_to "more", post_path(post) %></p>
+              <p></p>
+              <p><%= post.user.location %> - Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
             </div>
         </div>
       <% end %>
