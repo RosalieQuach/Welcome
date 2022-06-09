@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row mt-5 m-2">
     <div class="col-sm-12 col-md-12 col-lg-6">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+      <%= image_tag(@post.user.picture, :class=> "avatar") %>
       <% if @post.is_offer? %>
       <em><%= "I would like to offer"%></em>
       <% else %>
@@ -12,7 +12,8 @@
       <h2><i class="fa <%= @post.category.icon %>"></i> <%= @post.title %></h2>
       <i class="fa fa-map-marker"></i><p><%= @post.user.style_address %></p>
       <i class="fa fa-address-card"></i><p><%= @post.user.email %></p>
-      <i class="fa fa-calendar"></i><p><%= distance_of_time_in_words(Time.now, @post.created_at, only: [:days])%> ago</p>
+      <i class="fa fa-phone"></i><p><%= @post.user.phone %></p>
+      <i class="fa fa-calendar"></i><p><%= @post.created_at.to_date %></p>
       <p><%= @post.description %></p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-6 mb-4">

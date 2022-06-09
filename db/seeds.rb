@@ -42,7 +42,7 @@ Category.create({
 
 20.times do
 #   # call the API to get user data
-  url = "https://randomuser.me/api/?nat=ch&inc=location,email,phone"
+  url = "https://randomuser.me/api/?nat=ch&inc=location,email,phone,picture"
   user_serialized = URI.open(url).read
   user = JSON.parse(user_serialized)
   # actually create a user with this data
@@ -55,7 +55,8 @@ Category.create({
     location: user["results"][0]["location"]["city"],
     postcode: user["results"][0]["location"]["postcode"],
     streetname: user["results"][0]["location"]["street"]["name"],
-    streetnumber: user["results"][0]["location"]["street"]["number"]
+    streetnumber: user["results"][0]["location"]["street"]["number"],
+    picture: user["results"][0]["picture"]["thumbnail"]
     })
 end
 

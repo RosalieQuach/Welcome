@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     if params[:query].present?
-      @posts = Post.where(location: params[:query])
+      @posts = Post.joins(:users).where("user.location = params[:query]")
     else
       @posts = Post.all
     end
