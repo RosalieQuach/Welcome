@@ -23,7 +23,7 @@ justify-content: center;
 .card-product {
   overflow: hidden;
   line-height: 1.5em;
-  height: 200px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -39,7 +39,7 @@ justify-content: center;
 }
 .card-product p {
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.2;
   opacity: .7;
   color: $gray;
 }
@@ -48,7 +48,7 @@ justify-content: center;
 }
 .post-description {
   line-height: 1.5em;
-  height: 2.5em;
+  height: 1.8em;
   overflow: hidden;
 }
 

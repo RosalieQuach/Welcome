@@ -49,13 +49,12 @@
               <div class= "post-description">
                 <p><%= post.description %></p>
               </div>
-              <p><%= post.location %></p>
-
                 <p><%= link_to "more", post_path(post) %></p>
-
-              <p>Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
+              <p></p>
+              <p><%= post.location %> - Posted <%= distance_of_time_in_words(Time.now, post.created_at, only: [:days])%> ago</p>
             </div>
         </div>
       <% end %>
+      <% @posts = Post.order('created_at DESC')%>
     </div>
 </div>
