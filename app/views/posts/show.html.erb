@@ -2,7 +2,12 @@
 <div class="container">
   <div class="row mt-5 m-2">
     <div class="col-sm-12 col-md-12 col-lg-6">
+
+    <% if @post.user.picture.blank? %>
+      <%= image_tag("avatar-default.jpeg", :class=> "avatar") %>
+      <% else %>
       <%= image_tag(@post.user.picture, :class=> "avatar") %>
+      <% end %>
       <% if @post.is_offer? %>
       <em><%= "I would like to offer"%></em>
       <% else %>
